@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Config bo API keys
+raspberry_pi/config.yaml
+
+# Хотираи маҳаллӣ
+raspberry_pi/robot_memory.db
+
+# Arduino
+*.hex
+
+# OS
+.DS_Store

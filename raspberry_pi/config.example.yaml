@@ -1,0 +1,17 @@
+# Нусхаро ба config.yaml гиред ва қиматҳоро пур кунед:
+#   cp config.example.yaml config.yaml
+
+anthropic_api_key: "YOUR_API_KEY_HERE"
+
+serial_port: "/dev/ttyUSB0"   # дар Raspberry Pi одатан /dev/ttyUSB0 ё /dev/ttyACM0
+serial_baud: 115200
+
+camera_index: 0
+
+robot_name: "Робот"
+
+# Забони STT/TTS. Агар "tg-TJ" дастрас набошад, "ru-RU" ё "en-US" гузоред.
+language: "ru-RU"
+
+# Агар холӣ монед — робот пайваста гӯш мекунад (бе калимаи бедоркунӣ).
+wake_word: null
