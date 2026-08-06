@@ -1,13 +1,22 @@
-"""Гӯш кардани овоз ва табдил ба матн (STT)."""
+"""Гӯш кардани овоз ва табдил ба матн (STT).
+
+Google-и ройгон (recognize_google) забони "tg-TJ"-ро расман эълон
+накардааст, бинобар ин аввал онро мекӯшем ва агар хидмат хато диҳад
+(RequestError), худкор ба забони fallback (масалан "ru-RU") мегузарем.
+Матни ба забони русӣ гуфташуда низ бирасад, AI (Claude) метавонад
+бо тоҷикӣ ҷавоб диҳад — забони ҷавоб аз system prompt дар ai_chat.py
+муайян мешавад, на аз забони STT.
+"""
 
 import speech_recognition as sr
 
 
 class Listener:
-    def __init__(self, language: str = "ru-RU"):
+    def __init__(self, language: str = "tg-TJ", fallback_language: str = "ru-RU"):
         self._recognizer = sr.Recognizer()
         self._microphone = sr.Microphone()
         self._language = language
+        self._fallback_language = fallback_language
         with self._microphone as source:
             self._recognizer.adjust_for_ambient_noise(source, duration=1)
 
@@ -23,5 +32,14 @@ class Listener:
 
         try:
             return self._recognizer.recognize_google(audio, language=self._language)
-        except (sr.UnknownValueError, sr.RequestError):
+        except sr.UnknownValueError:
             return None
+        except sr.RequestError:
+            if not self._fallback_language:
+                return None
+            try:
+                return self._recognizer.recognize_google(
+                    audio, language=self._fallback_language
+                )
+            except (sr.UnknownValueError, sr.RequestError):
+                return None

@@ -61,8 +61,11 @@ def main():
     )
     vision.start()
 
-    listener = Listener(language=config.get("language", "ru-RU"))
-    speaker = Speaker()
+    listener = Listener(
+        language=config.get("language", "tg-TJ"),
+        fallback_language=config.get("fallback_language", "ru-RU"),
+    )
+    speaker = Speaker(language=config.get("tts_language", "tg"))
     ai = AIChat(api_key=config["anthropic_api_key"], robot_name=config.get("robot_name", "Робот"))
 
     print("Робот омода аст. Гап занед...")

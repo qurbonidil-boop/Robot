@@ -10,8 +10,14 @@ camera_index: 0
 
 robot_name: "Робот"
 
-# Забони STT/TTS. Агар "tg-TJ" дастрас набошад, "ru-RU" ё "en-US" гузоред.
-language: "ru-RU"
+# Забони асосии STT (гӯш кардан). Агар хидмати STT "tg-TJ"-ро дастгирӣ
+# накунад, худкор ба fallback_language мегузарад (нигаред speech_to_text.py).
+language: "tg-TJ"
+fallback_language: "ru-RU"
+
+# Забони TTS (гуфтор), номи забон дар espeak-ng, масалан "tg" (тоҷикӣ) ё
+# "ru" (русӣ) агар овози тоҷикӣ дар система набошад.
+tts_language: "tg"
 
 # Агар холӣ монед — робот пайваста гӯш мекунад (бе калимаи бедоркунӣ).
 wake_word: null
