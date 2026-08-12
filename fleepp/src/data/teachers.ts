@@ -1,0 +1,48 @@
+import { Teacher } from '@/types';
+
+export const teachers: Teacher[] = [
+  {
+    id: 't1',
+    name: 'Аслам Раҳимов',
+    subject: 'Математика',
+    phone: '+992 90 111 22 33',
+    email: 'aslam.rahimov@fleepp.tj',
+    bio: 'Муаллими математика бо 9 соли таҷриба, омодасозии довталабон ба ММТ.',
+    experienceYears: 9,
+    groupIds: ['g1'],
+    avatarColor: '#2F6F5E',
+  },
+  {
+    id: 't2',
+    name: 'Гулнора Саидова',
+    subject: 'Забони англисӣ',
+    phone: '+992 92 222 33 44',
+    email: 'gulnora.saidova@fleepp.tj',
+    bio: 'Муаллими забони англисӣ, соҳиби сертификати IELTS 8.0.',
+    experienceYears: 6,
+    groupIds: ['g2'],
+    avatarColor: '#B45309',
+  },
+  {
+    id: 't3',
+    name: 'Фаридун Каримов',
+    subject: 'Физика',
+    phone: '+992 93 333 44 55',
+    email: 'faridun.karimov@fleepp.tj',
+    bio: 'Муаллими физика, ғолиби олимпиадаҳои ҷумҳуриявӣ дар байни донишҷӯён.',
+    experienceYears: 11,
+    groupIds: ['g3'],
+    avatarColor: '#1D4ED8',
+  },
+  {
+    id: 't4',
+    name: 'Мадина Юсупова',
+    subject: 'Химия',
+    phone: '+992 98 444 55 66',
+    email: 'madina.yusupova@fleepp.tj',
+    bio: 'Муаллими химия бо равиши амалӣ ва лабораторӣ дар таълим.',
+    experienceYears: 7,
+    groupIds: ['g4'],
+    avatarColor: '#9333EA',
+  },
+];
