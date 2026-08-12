@@ -41,22 +41,22 @@ jobs:
         working-directory: fleepp/android
         run: chmod +x gradlew
 
-      - name: Build debug APK (arm64 only, smaller file)
+      - name: Build release APK (arm64 only, JS bundled in)
         working-directory: fleepp/android
-        run: ./gradlew assembleDebug --no-daemon -PreactNativeArchitectures=arm64-v8a
+        run: ./gradlew assembleRelease --no-daemon -PreactNativeArchitectures=arm64-v8a
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
           name: fleepp-apk
-          path: fleepp/android/app/build/outputs/apk/debug/app-debug.apk
+          path: fleepp/android/app/build/outputs/apk/release/app-release.apk
 
       - name: Create GitHub Release with APK
         uses: softprops/action-gh-release@v2
         with:
           tag_name: fleepp-apk-${{ github.run_number }}
           name: "FLEEPP APK #${{ github.run_number }}"
-          files: fleepp/android/app/build/outputs/apk/debug/app-debug.apk
+          files: fleepp/android/app/build/outputs/apk/release/app-release.apk
           body: |
             Файли APK-и FLEEPP, худкор сохта шуд аз коммити ${{ github.sha }}.
 
