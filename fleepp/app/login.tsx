@@ -166,7 +166,7 @@ const styles = StyleSheet.create({
     color: colors.textSecondary,
   },
   roleChipTextActive: {
-    color: '#fff',
+    color: colors.textOnPrimary,
   },
   form: {
     gap: 14,

@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
   infoValue: { fontSize: 13, color: colors.textPrimary, fontWeight: '600' },
   smsButton: {
     backgroundColor: colors.primary,
-    color: '#fff',
+    color: colors.textOnPrimary,
     textAlign: 'center',
     paddingVertical: 14,
     borderRadius: 12,

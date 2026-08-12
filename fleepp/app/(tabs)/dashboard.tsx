@@ -242,16 +242,18 @@ const styles = StyleSheet.create({
     gap: 4,
   },
   heroLabel: {
-    color: '#D9EFE9',
+    color: colors.textOnPrimary,
+    opacity: 0.75,
     fontSize: 13,
   },
   heroValue: {
-    color: '#fff',
+    color: colors.textOnPrimary,
     fontSize: 40,
     fontWeight: '800',
   },
   heroSub: {
-    color: '#D9EFE9',
+    color: colors.textOnPrimary,
+    opacity: 0.75,
     fontSize: 13,
   },
   infoRow: {

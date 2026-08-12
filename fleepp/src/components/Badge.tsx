@@ -8,10 +8,10 @@ interface BadgeProps {
 }
 
 const toneColors: Record<NonNullable<BadgeProps['tone']>, { bg: string; fg: string }> = {
-  success: { bg: '#DCFCE7', fg: '#15803D' },
-  warning: { bg: '#FEF3C7', fg: '#B45309' },
-  danger: { bg: '#FEE2E2', fg: '#B91C1C' },
-  info: { bg: '#DBEAFE', fg: '#1D4ED8' },
+  success: { bg: 'rgba(52, 211, 153, 0.16)', fg: '#34D399' },
+  warning: { bg: 'rgba(251, 191, 36, 0.16)', fg: '#FBBF24' },
+  danger: { bg: 'rgba(248, 113, 113, 0.16)', fg: '#F87171' },
+  info: { bg: 'rgba(96, 165, 250, 0.16)', fg: '#60A5FA' },
   neutral: { bg: colors.border, fg: colors.textSecondary },
 };
 

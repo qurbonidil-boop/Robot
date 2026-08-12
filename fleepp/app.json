@@ -6,7 +6,7 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "dark",
     "newArchEnabled": true,
     "plugins": [
       "expo-router"
@@ -18,7 +18,7 @@
     "android": {
       "package": "com.fleepp.app",
       "adaptiveIcon": {
-        "backgroundColor": "#0F5F4F",
+        "backgroundColor": "#05070D",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"

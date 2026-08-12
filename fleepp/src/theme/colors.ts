@@ -1,28 +1,28 @@
 export const colors = {
-  primary: '#0F5F4F',
-  primaryLight: '#E4F2EE',
-  primaryDark: '#0B463A',
-  accent: '#B45309',
-  danger: '#DC2626',
-  warning: '#D97706',
-  success: '#16A34A',
-  info: '#1D4ED8',
+  primary: '#22D3EE',
+  primaryLight: 'rgba(34, 211, 238, 0.12)',
+  primaryDark: '#0E7490',
+  accent: '#C084FC',
+  danger: '#F87171',
+  warning: '#FBBF24',
+  success: '#34D399',
+  info: '#60A5FA',
 
-  bg: '#F5F7F6',
-  surface: '#FFFFFF',
-  border: '#E4E7E6',
+  bg: '#05070D',
+  surface: '#0C1220',
+  border: '#1C2438',
 
-  textPrimary: '#12201C',
-  textSecondary: '#5B6B66',
-  textMuted: '#8B9994',
-  textOnPrimary: '#FFFFFF',
+  textPrimary: '#E7F6FF',
+  textSecondary: '#8FA3C4',
+  textMuted: '#5A6B8C',
+  textOnPrimary: '#03141A',
 };
 
 export const roleColors: Record<string, string> = {
-  admin: '#0F5F4F',
-  teacher: '#1D4ED8',
-  student: '#B45309',
-  parent: '#9333EA',
+  admin: '#22D3EE',
+  teacher: '#60A5FA',
+  student: '#FBBF24',
+  parent: '#C084FC',
 };
 
 export const roleLabels: Record<string, string> = {

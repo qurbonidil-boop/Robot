@@ -24,7 +24,7 @@ export function Button({ label, onPress, variant = 'primary', loading, disabled 
       ]}
     >
       {loading ? (
-        <ActivityIndicator color={variant === 'secondary' ? colors.primary : '#fff'} />
+        <ActivityIndicator color={variant === 'secondary' ? colors.primary : colors.textOnPrimary} />
       ) : (
         <Text style={[styles.label, variant === 'secondary' && styles.labelSecondary]}>{label}</Text>
       )}
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   label: {
-    color: '#FFFFFF',
+    color: colors.textOnPrimary,
     fontSize: 15,
     fontWeight: '700',
   },
