@@ -1,0 +1,65 @@
+name: Build FLEEPP APK
+
+on:
+  push:
+    branches:
+      - claude/fleepp-education-app-llt8pz
+    paths:
+      - 'fleepp/**'
+      - '.github/workflows/build-fleepp-apk.yml'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Install dependencies
+        working-directory: fleepp
+        run: npm ci
+
+      - name: Prebuild native Android project
+        working-directory: fleepp
+        env:
+          CI: '1'
+        run: npx expo prebuild -p android
+
+      - name: Make gradlew executable
+        working-directory: fleepp/android
+        run: chmod +x gradlew
+
+      - name: Build debug APK
+        working-directory: fleepp/android
+        run: ./gradlew assembleDebug --no-daemon
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: fleepp-apk
+          path: fleepp/android/app/build/outputs/apk/debug/app-debug.apk
+
+      - name: Create GitHub Release with APK
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: fleepp-apk-${{ github.run_number }}
+          name: "FLEEPP APK #${{ github.run_number }}"
+          files: fleepp/android/app/build/outputs/apk/debug/app-debug.apk
+          body: |
+            Файли APK-и FLEEPP, худкор сохта шуд аз коммити ${{ github.sha }}.
+
+            Барои насб: файли `.apk`-ро дар телефони Android боргирӣ кунед,
+            сипас кушоед. Агар Android пешниҳод кунад "Install from unknown
+            sources" — иҷозат диҳед.
