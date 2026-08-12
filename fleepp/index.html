@@ -1,4 +1,10 @@
 <title>FLEEPP — Барномаи довталабон</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#050a14">
+<meta name="description" content="FLEEPP — маркази омӯзишии ММТ">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
 <style>
 :root{
   color-scheme: dark;
@@ -1038,4 +1044,10 @@ svg{display:block;}
   renderGallery();
   renderTimeline();
 })();
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("sw.js").catch(function () {});
+  });
+}
 </script>
